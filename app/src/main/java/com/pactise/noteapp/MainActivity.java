@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("All Notes");
         getNotes();
         NoteData database = NoteData.getInstance(this);
         NoteDao dao = database.noteDao();
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
                 dao.delete(note);
                 notes.remove(notes.get(viewHolder.getAdapterPosition()));
                 adapter.notifyDataSetChanged();
+                Toast.makeText(MainActivity.this, "Item deleted", Toast.LENGTH_SHORT).show();
             }
         }).attachToRecyclerView(recyclerView);
     }
