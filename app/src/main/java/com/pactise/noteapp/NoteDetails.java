@@ -6,12 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
-public class NoteDetails extends AppCompatActivity {
+import java.io.Serializable;
+
+public class NoteDetails extends AppCompatActivity implements Serializable {
     private EditText title, desc ;
     private int receivedId;
     boolean openedAsUpdate =false;
-    Button buttonUpdate,buttonAdd;
+    Button buttonUpdate; ImageButton buttonAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,10 +73,11 @@ public class NoteDetails extends AppCompatActivity {
                 @Override
                 public void run() {
                     Note note= new Note(writtenDesc,writtenTitle);
+                    note.setId(receivedId);
                     dao.update(note);
                 }
             }).start();
-            finish();
+          finish();
         }
     }
 }

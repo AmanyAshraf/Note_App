@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         setTitle("All Notes");
         getNotes();

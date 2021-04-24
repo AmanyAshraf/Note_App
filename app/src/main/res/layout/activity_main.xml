@@ -9,13 +9,15 @@
     <include
         android:id="@+id/id_no_notes"
         layout="@layout/insert_design"
-        android:visibility="invisible"/>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <ImageButton
+        android:layout_width="96dp"
+        android:layout_height="50dp"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:src="@drawable/ic_add"
+        android:background="@drawable/custom_shape"
         android:onClick="AddNewNote"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/id_rv"

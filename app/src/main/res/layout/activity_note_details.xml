@@ -37,23 +37,24 @@
             android:gravity="top"
             />
     </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="32dp"
         android:src="@drawable/ic_ok"
+        android:background="@drawable/custom_shape"
         android:id="@+id/btn_add"
         android:onClick="savingDetails"/>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="32dp"
-        android:src="@drawable/ic_ok"
-        android:backgroundTint="@color/yellow"
-        android:visibility="invisible"
+        android:text="update"
+        android:backgroundTint="@color/teal_700"
         android:id="@+id/btn_update"
+        android:visibility="invisible"
         android:onClick="update"/>
 
 </LinearLayout>
